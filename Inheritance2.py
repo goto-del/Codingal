@@ -1,14 +1,20 @@
-class Vehicle():
+from abc import ABC, abstractmethod
 
-    def __init__(self, name, max_speed, mileage):
-        self.name = name
-        self.max_speed = max_speed
-        self.mileage = mileage
+class Absclass(ABC):
 
-class Bus(Vehicle):
-    pass
+    def print(self, x):
+        print("Passed value is:", x)
+    
 
-School_bus = Bus("School Volvo", 180, 12)
-print("Vehicle Name:", School_bus.name, 
-      "\nMax Speed:", School_bus.max_speed,
-      "\nMileage:", School_bus.mileage)
+    @abstractmethod
+    def task(self):
+        print("We are inside Absclass task")
+    
+class test_class(Absclass):
+
+    def task(self):
+        print("We are inside test_class task")
+
+test_obj = test_class()
+test_obj.task()
+test_obj.print(100)
