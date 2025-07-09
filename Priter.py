@@ -35,6 +35,7 @@ class Sprite(pygame.sprite.Sprite):
         self.rect.move_ip(self.velocity)
         boundary_hit = False
         if self.rect.left <= 0 or self.rect.right >= 500:
+            self.velocity[0] = -self.velocity[0]  
             boundary_hit = True
 
         if self.rect.top <= 0 or self.rect.bottom >= 400:
