@@ -1,0 +1,17 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Age calculator App")
+root.geometry("400x400")       
+button = tk.Button(root, text="Calculate Age")
+button.pack(pady=20)    
+label = tk.Label(root, text="Enter your birth year:")
+label.pack(pady=10)
+principles = tk.Button(root, text="Principle")
+principles.pack(pady=10)
+entry = tk.Entry(root)
+rate = tk.Label(root, text="Enter interest rate:")
+rate.pack(pady=10)     
+entry.pack(pady=10)
+duration = tk.Label(root, text="Enter duration in years:")
+duration.pack(pady=10)
