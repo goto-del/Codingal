@@ -1,5 +1,5 @@
-num = int(input("Enter a number to print its multiplication table: "))
+def greet(name):
+    print(f"Hello, {name}!")
 
-for i in range(1,11):
-    print(f"{num} x {i} = {num * i}")
-
+name = input("Enter your name: ")
+greet(name)
