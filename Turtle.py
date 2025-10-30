@@ -1,16 +1,31 @@
 import turtle
-turtle.Screen().bgcolor("orange")
-turtle.Screen().setup(300,400)
-polygon = turtle.Turtle()
 
-num_sides = 6
-side_length = 70
-angle = 360 / num_sides
+t = turtle.Turtle()
+t.color("blue")
+t.pensize(5)
+t.speed(1)
 
-for i in range(num_sides):
-    polygon.forward(side_length)
-    polygon.right(angle)
+board = turtle.Screen()
 
+board.title("Turtle drawing a square")
+board.bgcolor("lightblue")
 
+t.forward(100)
+t.left(120)
+t.forward(100)
+t.left(120)
+t.forward(100)
+t.left(120)
+t.penup()
+t.left(90)
+t.forward(50)
+t.pendown()
+t.right(90)
+t.forward(100)
+t.right(120)
+t.forward(100)
+t.right(120)
+t.forward(100)
 
 turtle.done()
+
