@@ -1,5 +1,17 @@
-def greet(name):
-    print(f"Hello, {name}!")
-
-name = input("Enter your name: ")
-greet(name)
+fruit = ["Apple", "Banana", "Date", "Cherry", "Elder Strawberry", "Grape", "Strawberry"]
+print(fruit)
+print(fruit[1])
+print(fruit[-1])
+fruit.append("Sugar Apple")
+print(fruit)
+fruit.remove("Banana")
+print(fruit)
+print(len(fruit))
+print(fruit[2:6])
+print(fruit.pop())
+fruit.sort()
+print(fruit)
+print(fruit[:5])
+print(fruit[5:])
+fruit.clear()
+print(fruit)
