@@ -1,9 +1,15 @@
-s1 = {1, 2, 3, 4, 3, 2, 5, 1}
-Names = {"Alice", "Bob", "Charlie", "Alice", "Eve", "Alice", "Eve", "Bob"}
-print(s1)
-print(Names)
+class Robot:
+    def __init__(self,name,speed,madein,year,model):
+        self.speed = speed
+        self.madein = madein
+        self.year = year
+        self.model = model
+        self.name = name
 
-# To convert set to list
-list_from_set = list(s1)
-print(list_from_set)
-quit
+    def introduce(self):
+        print(f"Hello My name is {self.name}, I am Made in {self.madein},My speed is {self.speed}, My model is {self.model}, I am made in year {self.year}")
+
+robot1 = Robot("Roboxic", 11, "India", 2025, "Titanium")
+robot2 = Robot("Robotic", 4 , "China", 2021, "HIGH-POWER")
+robot1.introduce()
+robot2.introduce()
