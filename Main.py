@@ -1,12 +1,19 @@
-class car:
-    def __init__ (self, make, model, year, color):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.color = color
-
-    def display_info(self):
-        return f"Details of the car is {self.year} {self.color} {self.make} {self.model}"
+class Parent:
+    def __init__(self,name , age):
+        self.name = name
+        self.age = age
     
-c1 = car("Toyota", "Camry", 2020, "Red")
+    def display_info(self):
+        return f"Name : {self.name}, Age : {self.age}"
+    
+class Child(Parent):
+    def __init__(self, name, age, school):
+        super().__init__(name,age)
+        self.school = school
+    
+    def display_info(self):
+        parent_info = super().display_info()
+        return f"{parent_info}, School : {self.school}"
+    
+c1 = Child("Elias", 10 , "ITL Public School")
 print(c1.display_info())

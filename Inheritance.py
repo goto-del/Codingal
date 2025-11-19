@@ -1,21 +1,23 @@
-class Vehicle():
+class Person:
+    def __init__(self, name, idnumber):
+        self.name = name
+        self.idnumber = idnumber
 
-    def __init__(self, fare):
-        self.fare = fare
+    def display_info(self):
+        return f"Name : {self.name}, ID Number : {self.idnumber}"
+    
+class Employee(Person):
+    def __init__(self, name, idnumber, salary, post):
+        super().__init__(name, idnumber)
+        self.salary = salary
+        self.post = post
 
-class Normal(Vehicle):
+    def display_info(self):
+        person_info = super().display_info()
+        return f"{person_info} Salary : {self.salary}, Post : {self.post}"
+    
+p1 = Employee("Ram", 1160033, "Rs. 1,00,000", "Senior Accountant")
+p2 = Employee("Brian" , 110077, "Rs. 1,00,00,000", "Senior Manager")
 
-    def __init__(self, fare):
-        super().__init__(fare)
-        fare = 50
-    def get_fare(self):
-        return self.fare
-print("Normal fare:", Normal(50).get_fare()) 
-class Volvo(Vehicle):
-
-    def __init__(self, fare):
-        super().__init__(fare)
-        fare = 100
-    def get_fare(self):
-        return self.fare + (self.fare * 0.2)
-print("Volvo fare:", Volvo(100).get_fare())
+print(p1.display_info())
+print(p2.display_info())
