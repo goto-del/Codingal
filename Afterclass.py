@@ -1,15 +1,31 @@
-class Robot:
-    def __init__(self,name,speed,madein,year,model):
-        self.speed = speed
-        self.madein = madein
-        self.year = year
-        self.model = model
-        self.name = name
+class Polygon:
+    def area(self):
+        pass
 
-    def introduce(self):
-        print(f"Hello My name is {self.name}, I am Made in {self.madein},My speed is {self.speed}, My model is {self.model}, I am made in year {self.year}")
+class Rectangle(Polygon):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    def area(self):
+        return self.length * self.breadth
 
-robot1 = Robot("Roboxic", 11, "India", 2025, "Titanium")
-robot2 = Robot("Robotic", 4 , "China", 2021, "HIGH-POWER")
-robot1.introduce()
-robot2.introduce()
+class Square(Polygon):
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side * self.side
+    
+class Circle(Polygon):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return self.radius * self.radius * 3.1416
+    
+r1 = Rectangle(22.35 , 3)
+print(r1.area())
+s1 = Square(34)
+print(s1.area())
+c1 = Circle(35)
+print(c1.area())
