@@ -1,19 +1,26 @@
-class Parent:
+class Cat:
     def __init__(self,name , age):
+        self.name = name 
+        self.age = age
+
+    def display_info(self):
+        print(f"I am a Cat ,My name is {self.name}, My age is {self.age}")
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def __init__(self, name, age):
         self.name = name
         self.age = age
-    
     def display_info(self):
-        return f"Name : {self.name}, Age : {self.age}"
-    
-class Child(Parent):
-    def __init__(self, name, age, school):
-        super().__init__(name,age)
-        self.school = school
-    
-    def display_info(self):
-        parent_info = super().display_info()
-        return f"{parent_info}, School : {self.school}"
-    
-c1 = Child("Elias", 10 , "ITL Public School")
-print(c1.display_info())
+        print(f"I am a Dog. My name is {self.name}, My age is {self.age}")
+
+    def sound(self):
+        print("Bow")
+
+c1 = Cat("Rori", 5)
+d1 = Dog("Leo", 1)
+c1.display_info()
+d1.display_info()
+c1.sound()
+d1.sound()

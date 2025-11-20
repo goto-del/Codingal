@@ -1,15 +1,16 @@
-class fruit:
+class Computer:
 
-    def __init__(self, color, name):
-        self.color = color
-        self.name = name
-        print("Object Created")
+    def __init__(self):
+        self.__maxprice = 9000
 
-    
-    
-    def __del__(self):
-        print("Destructor called")
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
 
-obj = fruit("Red", "Apple")
-print(obj.name)
-del obj
+    def setMaxprice(self, price):
+        self.__maxprice = price
+
+c = Computer()
+c.sell()
+
+c.setMaxprice(10000)
+c.sell()
