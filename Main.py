@@ -1,26 +1,17 @@
-class Cat:
-    def __init__(self,name , age):
-        self.name = name 
-        self.age = age
+f = open("example.txt", "w")
+f.write("Hello World!\n")
+f.write("This is a Python program\n")
+f.write("Powered By Visual Studio Code (VS Code)\n")
+f.close()
 
-    def display_info(self):
-        print(f"I am a Cat ,My name is {self.name}, My age is {self.age}")
-    def sound(self):
-        print("Meow")
 
-class Dog:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    def display_info(self):
-        print(f"I am a Dog. My name is {self.name}, My age is {self.age}")
 
-    def sound(self):
-        print("Bow")
+f = open("example.txt", "a")
+f.write("POWERED BY ANDROID LAPTOPS.\n")
+f.write("This is the Python program I have done today.\n")
+f.close()
 
-c1 = Cat("Rori", 5)
-d1 = Dog("Leo", 1)
-c1.display_info()
-d1.display_info()
-c1.sound()
-d1.sound()
+f = open("example.txt", "r")
+content = f.read()
+print(content)
+f.close()
