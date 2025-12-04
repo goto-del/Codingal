@@ -1,10 +1,17 @@
-file = open("Codingal.txt" , "r")
-readun = file.read()
-print(readun)
-file.close()
+newfile = open('New.txt', 'w')
+newfile.close()
+import os
 
-file= open("Codingal.txt", "a")
-file.write("\nYes\n")
-file.write("I want to\n")
-file.close()
+print("CHECKING IF THE FILE EXIST...")
 
+if os.path.exists("Codingal.txt"):
+    print("FILE EXISTS")
+else:
+    print("FILE DOES NOT EXIST")
+
+
+
+if os.path.exists("New.txt"):
+    os.remove("New.txt")
+else:
+    print("FILE DOES NOT EXIST")
