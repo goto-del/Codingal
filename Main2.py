@@ -1,12 +1,9 @@
-def sum(n):
-    sum = 0
+def ontime(n):
+    iteration = 0 
     for i in range(1, n+1):
-        sum = sum+i
+        iteration += 1
 
-    return sum
+    print("Total number of iterations done by the code is : ",iteration)
 
-n = int(input("Enter a number : "))
-
-s = sum(n)
-
-print(s)
+ontime(10)
+ontime(100)

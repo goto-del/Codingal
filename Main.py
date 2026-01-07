@@ -1,8 +1,9 @@
-def sum(n):
-    return n * (n+1) / 2
 
+def printnumber(n):
+    iteration=0
+    print("The number entered by user is : ", n)
+    iteration+=1
+    print("Total number of iterations done by the code is : ",iteration)
 
-n = int(input("Enter a number : "))
-
-s = sum(n)
-print(s)
+printnumber(10)
+printnumber(100)
