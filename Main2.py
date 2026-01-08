@@ -1,9 +1,6 @@
-def ontime(n):
-    iteration = 0 
-    for i in range(1, n+1):
-        iteration += 1
+def sum(n):
+    return n*(n+1)/2     
 
-    print("Total number of iterations done by the code is : ",iteration)
+s = sum(111)
 
-ontime(10)
-ontime(100)
+print(s)

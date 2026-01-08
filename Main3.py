@@ -1,13 +1,9 @@
-def squaretime(n):
-    iteration = 0
-    for i in range(1, n+1):
-        for j in range(1, n+1):
-            print("*", end = " ")
-            iteration += 1
+def arraysum(a):
+    sum = 0
+    for i in a:
+        sum = sum+i
+    return sum
 
-        print(" ")
-    print("Total number of iterations done by the code is : ",iteration)    
-    
-squaretime(5)
-squaretime(10)
-squaretime(234)
+abc = [1,4,8,2,3,7,9,109]
+
+print(arraysum(abc))

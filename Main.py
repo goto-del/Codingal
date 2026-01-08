@@ -1,9 +1,8 @@
+def printes(n):   
+    if(n<=0):
+        return
+    print("Codingal")
+    print(n/2)
+    printes(n/2)
 
-def printnumber(n):
-    iteration=0
-    print("The number entered by user is : ", n)
-    iteration+=1
-    print("Total number of iterations done by the code is : ",iteration)
-
-printnumber(10)
-printnumber(100)
+printes(10)
