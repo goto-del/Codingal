@@ -1,24 +1,11 @@
-def sum(n,m):
-    
-    return n * m
+def findlcm(a,b):
+    greater = max(a,b)
+    while True:
+        if greater%a == 0 and greater %b == 0:
+            return greater
+        greater = greater+1
 
+a = int(input("Enter a number : "))
+b = int(input("Enter another number : "))
 
-n = int(input("Enter a number : "))
-m = int(input("Enter a number : "))
-
-s = sum(n,m)
-print(s)
-
-def wow(n,m):
-
-    result = 0
-    for i in range(m):
-        result = result+n
-
-    return result
-
-n1 = int(input("Enter a number : "))
-m1 = int(input("Enter a number : "))
-
-s1 = wow(n1,m1)
-print(s1)
+print(f"The LCM of {a} and {b} is {findlcm(a,b)}")
