@@ -1,6 +1,12 @@
-def sum(n):
-    return n*(n+1)/2     
+def findgcd(a,b):
+    gcd = 1
+    for i in range(1,min(a,b)+1):
+        if a%i == 0 and b%i == 0:
+            gcd = i
+    return gcd
 
-s = sum(111)
+a = int(input("Enter a number : "))
+b = int(input("Enter another number : "))
 
-print(s)
+print(f"The GCD of {a} and {b} is {findgcd(a,b)}")
+
