@@ -1,12 +1,14 @@
-num = int(input("Enter a number : "))
-original = num
-reversed = 0
-while num > 0:
-    digit = num%10
-    reversed = reversed*10+digit
-    num = num // 10
+num = int(input("Enter any number : "))
 
-if original == reversed:
-    print(f"{original} is a palindromic number.")
+if num <= 1:
+    print(f"{num} is a negative number so it cannot be considered prime or non-prime.")
 else:
-    print(f"{original} is not a palindromic number.")
+    isprime = True
+    for i in range(2, num):
+        if num % i == 0:
+            isprime = False
+            break
+    if isprime:
+        print(f"{num} is a prime number.")
+    else:
+        print(f"{num} is not a prime number")

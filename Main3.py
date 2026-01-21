@@ -1,9 +1,14 @@
-def arraysum(a):
-    sum = 0
-    for i in a:
-        sum = sum+i
-    return sum
-
-abc = [1,4,8,2,3,7,9,109]
-
-print(arraysum(abc))
+a = 3000
+for num in range(1, a+1):
+    c = 0
+    rev = 0
+    temp = num
+    for i in range(1, temp+1):
+        if temp%i == 0:
+            c = c+1
+    if c == 2:
+        while (temp > 0):
+            rev = rev * 10 + (temp % 10)
+            temp = temp // 10
+        if rev == num:
+            print(num)

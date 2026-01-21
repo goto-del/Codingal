@@ -1,12 +1,11 @@
-def findgcd(a,b):
-    gcd = 1
-    for i in range(1,min(a,b)+1):
-        if a%i == 0 and b%i == 0:
-            gcd = i
-    return gcd
+num = int(input("Enter a number : "))
 
-a = int(input("Enter a number : "))
-b = int(input("Enter another number : "))
-
-print(f"The GCD of {a} and {b} is {findgcd(a,b)}")
-
+prime = [True] * (num+1)
+for i in range(2, num):
+    if prime[i] == True:
+        for j in range(i * 2, num + 1, i):
+            prime[j] = False
+print(f"Prime below {num} are ")
+for i in range(2, num+1):
+    if prime[i] == True:
+        print(i)
