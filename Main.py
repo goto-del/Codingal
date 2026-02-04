@@ -1,14 +1,12 @@
-num = int(input("Enter any number : "))
+def poweroftwo(n):
+    if n == 0:
+        return 0
+    if (n & (n-1) == 0):
+        return 1
+    return 0
 
-if num <= 1:
-    print(f"{num} is a negative number so it cannot be considered prime or non-prime.")
+n = int(input("Enter a number : "))
+if poweroftwo(n) == 1:
+    print(f"{n} | This number is a power of 2.")
 else:
-    isprime = True
-    for i in range(2, num):
-        if num % i == 0:
-            isprime = False
-            break
-    if isprime:
-        print(f"{num} is a prime number.")
-    else:
-        print(f"{num} is not a prime number")
+    print(f"{n} | This number is not the power of 2.")

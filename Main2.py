@@ -1,8 +1,14 @@
-def setbitornot(num, p):
-    if num & (1 << (p-1)):
-        print("set\n")
+def poweroffour(n):
+    if n <= 0:
+        return 0
+    if (n & (n-1)) == 0 and (n-1) % 3 == 0:
+        return 1
     else:
-        print("Not set\n")
-num = int(input("Enter a number : "))
-p = int(input("Enter the position : "))
-setbitornot(num , p)
+        return 0
+    
+n = int(input("Enter a number : "))
+if poweroffour(n) == 1:
+    print(f"{n} | This is in the power of 4.")
+else:
+    print(f"{n} | This is not in the power of 4.")
+    
