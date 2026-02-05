@@ -1,14 +1,11 @@
-def poweroffour(n):
-    if n <= 0:
-        return 0
-    if (n & (n-1)) == 0 and (n-1) % 3 == 0:
-        return 1
-    else:
-        return 0
-    
-n = int(input("Enter a number : "))
-if poweroffour(n) == 1:
-    print(f"{n} | This is in the power of 4.")
-else:
-    print(f"{n} | This is not in the power of 4.")
-    
+def swap2(a,b):
+    print(f"Before Swapping a = {a}, b = {b}.")
+    a = (a & b) + (a | b)
+    b = a + (~b) + 1
+    a = a + (~b) + 1
+    print(f"After Swapping a = {a}, b = {b}.")
+
+a = int(input("Enter the value of a : "))
+b = int(input("Enter the value of b : "))
+
+swap2(a,b)

@@ -1,12 +1,11 @@
-def poweroftwo(n):
-    if n == 0:
-        return 0
-    if (n & (n-1) == 0):
-        return 1
-    return 0
+def swap(a,b):
+    print(f"Before Swapping a = {a}, b = {b} ")
+    a = a ^ b
+    b = a ^ b
+    a = a ^ b
+    print(f"After Swapping a = {a}, b = {b} ")
 
-n = int(input("Enter a number : "))
-if poweroftwo(n) == 1:
-    print(f"{n} | This number is a power of 2.")
-else:
-    print(f"{n} | This number is not the power of 2.")
+a = int(input("Enter the value of a : "))
+b = int(input("Enter the value of b : "))
+
+swap(a,b)
