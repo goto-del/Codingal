@@ -1,20 +1,10 @@
-def powerset(arr):
-    result = [[]]
-    for i in arr:
-        newset = []
-        for s in result:
-            newset.append(s+[i])
-        result = result+newset
-    return result
+import sqlite3
 
-n = int(input("How many numbers : "))
+database = 'database.sqlite'
+connection = sqlite3.connect(database)
+print("Open Data Sucessfully.")
 
-arr = []
-for i in range(n):
-    num = int(input("ENTER THE NUMBER WHICH YOU WANT TO ADD IN THE LIST : "))
-    arr.append(num)
+import pandas as pd
 
-ps = powerset(arr)      
-print(f"The Powerset of the array is .")
-for i in ps:
-    print(i)
+tables = pd.read_sql("""SELECT * FROM sqlite_master WHERE type = 'table';""",connection)
+print(tables)
