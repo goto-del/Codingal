@@ -3,30 +3,32 @@ import sqlite3
 database = "database.sqlite"
 
 con = sqlite3.connect(database)
-print("Open Data Succesfully!")
+
+print("Open Data Succesfully")
 
 import pandas as pd
 
 tables = pd.read_sql("""SELECT * FROM sqlite_master WHERE type = 'table';""",con)
+
 print(tables)
 
 matches = pd.read_sql("""SELECT * FROM Match;""",con)
-print(matches)
+print(matches.tail())
 
-matches.info()
+winners = pd.read_sql("""SELECT AVG(Win_Margin) FROM Match WHERE Season_ID == 9;""",con)
+print(winners)
 
-match_wins = pd.read_sql("""SELECT * FROM Match WHERE Match_Winner = 7;""",con)
-
-print(match_wins)
-
-teams = pd.read_sql("""SELECT * FROM Team;""",con)
-print(teams)
-
-details = pd.read_sql("""SELECT * FROM Team WHERE Team_Name LIKE 'D%';""",con)
-print(details)
-
-seasons = pd.read_sql("""SELECT * FROM Match WHERE Match_Winner == 7 AND Season_ID IN (8,9);""",con)
+seasons = pd.read_sql("""SELECT COUNT(DISTINCT Venue_ID) FROM Match WHERE Season_ID == 9;""",con)
 print(seasons)
 
-winners = pd.read_sql("""SELECT MIN(Win_Margin),MAX(Win_Margin) FROM Match;""",con)
-print(winners)
+margins =pd.read_sql("""SELECT MIN(Win_Margin), Max(Win_Margin), Avg(Win_Margin), COUNT(DISTINCT(Man_of_the_Match))FROM Match;""", con)
+print(margins)
+
+season2 = pd.read_sql("""SELECT MIN(Win_Margin), Max(Win_Margin), Avg(Win_Margin), COUNT(DISTINCT(Man_of_the_Match))FROM Match WHERE Season_ID == 8;""", con)
+print(season2)
+
+total = pd.read_sql("""SELECT SUM(Win_Margin) FROM Match WHERE Season_ID == 9;""",con)
+print(total)
+
+aver = pd.read_sql("""SELECT AVG(Win_Margin),Match_Winner FROM Match WHERE Season_ID == 9 GROUP BY Match_Winner;""",con)
+print(aver)
