@@ -2,33 +2,35 @@ import sqlite3
 
 database = "database.sqlite"
 
-con = sqlite3.connect(database)
+con = sqlite3.connect('database.sqlite')
 
 print("Open Data Succesfully")
 
+con.execute("""CREATE TABLE CLASS_13
+        (SNO INT PRIMARY KEY NOT NULL,
+        Roll_No INT NOT NULL,
+        Name TEXT NOT NULL,
+        AGE INT DEFAULT (15),
+        GENDER TEXT NOT NULL,
+        Email_ID TEXT NOT NULL,
+        Contact_No REAL NOT NULL);""")
+
+print("Table Created Succesfully")
+
+con.execute("INSERT INTO CLASS_13 VALUES (1, 1, 'Allen', 14, 'Male', 'allen@gmail.com', 8080900)");
+
+con.execute("INSERT INTO CLASS_13 VALUES (2, 2, 'Aisha', 14, 'Female', 'aish@gmail.com', 9080900)");
+
+con.execute("INSERT INTO CLASS_13 VALUES (3, 3, 'Jeff', 15, 'Male', 'allen@gmail.com', 9900900)");
+
+con.commit()
+
+print('Records Created Succesfully')
+
 import pandas as pd
 
-tables = pd.read_sql("""SELECT * FROM sqlite_master WHERE type = 'table';""",con)
-
+tables = pd.read_sql("""SELECT * FROM CLASS_13;""",con)
 print(tables)
 
-matches = pd.read_sql("""SELECT * FROM Match;""",con)
-print(matches.tail())
-
-winners = pd.read_sql("""SELECT AVG(Win_Margin) FROM Match WHERE Season_ID == 9;""",con)
-print(winners)
-
-seasons = pd.read_sql("""SELECT COUNT(DISTINCT Venue_ID) FROM Match WHERE Season_ID == 9;""",con)
-print(seasons)
-
-margins =pd.read_sql("""SELECT MIN(Win_Margin), Max(Win_Margin), Avg(Win_Margin), COUNT(DISTINCT(Man_of_the_Match))FROM Match;""", con)
-print(margins)
-
-season2 = pd.read_sql("""SELECT MIN(Win_Margin), Max(Win_Margin), Avg(Win_Margin), COUNT(DISTINCT(Man_of_the_Match))FROM Match WHERE Season_ID == 8;""", con)
-print(season2)
-
-total = pd.read_sql("""SELECT SUM(Win_Margin) FROM Match WHERE Season_ID == 9;""",con)
-print(total)
-
-aver = pd.read_sql("""SELECT AVG(Win_Margin),Match_Winner FROM Match WHERE Season_ID == 9 GROUP BY Match_Winner;""",con)
-print(aver)
+class_10 = pd.read_sql("""SELECT * FROM CLASS_13;""",con)
+print(class_10.head())
