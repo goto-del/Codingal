@@ -1,29 +1,34 @@
-import tkinter as tk
-from tkinter import messagebox
-from PIL import Image, ImageTk
+import sqlite3
+import pandas as pd
+import numpy as np
 
-menu = [ 
-    {"Item": "Piza", "Price": 250.00},
-    {"Item": "Burger", "Price": 150.00},
-    {"Item": "Pasta", "Price": 200.00},
-    {"Item": "Sandwich", "Price": 100.00},
-    {"Item": "Coffee", "Price": 50.00},
-    {"Item": "Tea", "Price": 40.00},
-    {"Item": "Juice", "Price": 20.00}
- ]
+database = "database.sqlite"
 
-class RestaurantApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Restaurant Menu")
-        self.root.geometry("600x500")
-        
-        bg_image = Image.open("bg.jpeg")
-        bg_image = bg_image.resize((600, 500))
-        self.bg_photo = ImageTk.PhotoImage(bg_image)
-        bg_label = tk.Label(root, image=self.bg_photo)
-        bg_label.place(x = 0, y = 0, relwidth=1, relheight=1)
+con = sqlite3.connect(database)
 
-        menu_frame = tk.Frame(root, bg="white", bd=5)
-        menu_frame.place(relx=0.5, rely=0.5, anchor = "center")
-        tk.Label(menu_frame, text="Menu", font=("Arial", 18, "bold") bg="white".grid(row=0, column=0,columnspan=3, pady=10))
+tables = pd.read_sql("""SELECT * FROM sqlite_master WHERE type = 'table';""",con)
+print(tables)
+
+countries = pd.read_sql("""SELECT * FROM country c;""",con)
+print(countries)
+
+city = pd.read_sql("""SELECT * FROM city ci;""",con)
+print(city)
+
+joint_city = pd.read_sql("""SELECT c.Country_Id,c.Country_Name,ci.City_Name
+                         FROM country c
+                         INNER JOIN city ci
+                         ON c.Country_Id == ci.Country_Id;""",con)
+print(joint_city)
+
+players = pd.read_sql("""SELECT * FROM player;""",con)
+print(players)
+
+seasonss = pd.read_sql("""SELECT * FROM season;""",con)
+print(seasonss)
+
+joinout = pd.read_sql("""SELECT * FROM player LEFT JOIN season ON player.Player_Id == season.Man_of_the_Series;""",con)
+print(joinout)
+
+joincross = pd.read_sql("""SELECT c.Country_Id,c.Country_Name,ci.City_Name FROM country c CROSS JOIN  city ci;""",con)
+print(joincross)
