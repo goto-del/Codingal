@@ -1,36 +1,20 @@
 import sqlite3
+import pandas as pd
+import numpy as np
 
 database = "database.sqlite"
 
-con = sqlite3.connect('database.sqlite')
+con = sqlite3.connect(database)
 
-print("Open Data Succesfully")
-
-con.execute("""CREATE TABLE CLASS_13
-        (SNO INT PRIMARY KEY NOT NULL,
-        Roll_No INT NOT NULL,
-        Name TEXT NOT NULL,
-        AGE INT DEFAULT (15),
-        GENDER TEXT NOT NULL,
-        Email_ID TEXT NOT NULL,
-        Contact_No REAL NOT NULL);""")
-
-print("Table Created Succesfully")
-
-con.execute("INSERT INTO CLASS_13 VALUES (1, 1, 'Allen', 14, 'Male', 'allen@gmail.com', 8080900)");
-
-con.execute("INSERT INTO CLASS_13 VALUES (2, 2, 'Aisha', 14, 'Female', 'aish@gmail.com', 9080900)");
-
-con.execute("INSERT INTO CLASS_13 VALUES (3, 3, 'Jeff', 15, 'Male', 'allen@gmail.com', 9900900)");
-
-con.commit()
-
-print('Records Created Succesfully')
-
-import pandas as pd
-
-tables = pd.read_sql("""SELECT * FROM CLASS_13;""",con)
+tables = pd.read_sql("""SELECT * FROM sqlite_master WHERE type = 'table';""",con)
 print(tables)
 
-class_10 = pd.read_sql("""SELECT * FROM CLASS_13;""",con)
-print(class_10.head())
+player = pd.read_sql("""SELECT * FROM Player_Match;""",con)
+print(player)
+
+match_detail = pd.read_sql("""SELECT Season_Id,Match_Id,v.Venue_Name,c.City_Name,t.Team_Name AS winner FROM Match
+                            INNER JOIN Venue AS v ON match.Venue_Id == v.Venue_Id
+                            INNER JOIN City AS c ON v.City_Id == c.City_Id
+                            INNER JOIN Team AS t ON match.Match_Winner == t.Team_Id;""", con)
+print(match_detail)
+
