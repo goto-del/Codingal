@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Event Data Viewer</title>
+    <link rel="stylesheet" href="school_event.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>School Event Data Viewer</h1>
+            <p>Simulating server data fetch, JSON serialization, and parsing.</p>
+        </header>
+
+        <main>
+            <!-- Loading Message -->
+            <div id="loading-message" class="card loading hidden">
+                Loading event data from server...
+            </div>
+
+            <!-- Data Container (Hidden by default) -->
+            <div id="data-container" class="hidden">
+                <div class="card">
+                    <h2>JSON Text (Serialized)</h2>
+                    <pre id="json-text-display"></pre>
+                </div>
+
+                <div class="card">
+                    <h2>Event Details (Parsed Object)</h2>
+                    <div id="event-details" class="event-details">
+                        <!-- Details injected by JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <button id="load-btn" onclick="loadData()">Fetch Event Data</button>
+        </main>
+    </div>
+
+    <script src="school_event.js"></script>
+</body>
+</html>

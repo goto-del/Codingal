@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyPortfolio.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-center text-light">
+            <h1 class="display-3 fw-bold mb-3 hero-title">Creative Thinker & Web Developer</h1>
+            <p class="lead mb-4 fw-light">I build beautiful, responsive, and dynamic web applications that engage users.</p>
+            <a href="#contact" class="btn btn-primary btn-lg px-4 me-md-3 fw-bold shadow">Get In Touch</a>
+            <a href="#about" class="btn btn-outline-light btn-lg px-4 shadow">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Workspace" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-lg-6 px-lg-5">
+                    <h2 class="display-5 fw-bold mb-4">About Me</h2>
+                    <h4 class="text-primary mb-3">Designing with passion, building with purpose.</h4>
+                    <p class="lead text-muted">I am a passionate software developer with a knack for creating intuitive and visually stunning user experiences.</p>
+                    <p class="mb-4">With expertise in HTML, CSS, JavaScript, and modern frameworks like React and Vue, I bring ideas to life on the web. I enjoy solving complex problems and continuously learning new technologies to improve my craft. Let's create something extraordinary together.</p>
+                    <a href="#contact" class="btn btn-dark btn-lg shadow-sm">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">My Services</h2>
+                <div class="heading-underline mx-auto mt-2 mb-4 bg-primary"></div>
+                <p class="lead text-muted">What I can do for you and your business</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="service-icon mb-4">
+                                <!-- A simple SVG icon for representation -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-code-slash text-primary" viewBox="0 0 16 16">
+                                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title h4 mb-3 fw-bold">Web Development</h3>
+                            <p class="card-text text-muted">Building responsive, fast-loading, and secure websites using the latest technologies and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="service-icon mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-palette text-primary" viewBox="0 0 16 16">
+                                    <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                    <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.15 1.096.14 1.346-.032.027-.019.05-.055.064-.108a.92.92 0 0 0 .013-.122 7.15 7.15 0 0 0-.001-.06A7 7 0 1 0 8 15z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title h4 mb-3 fw-bold">UI/UX Design</h3>
+                            <p class="card-text text-muted">Creating beautiful, user-centric, and intuitive user interfaces that provide exceptional user experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="service-icon mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-graph-up-arrow text-primary" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title h4 mb-3 fw-bold">SEO Optimization</h3>
+                            <p class="card-text text-muted">Ensuring your website ranks high on search engines to drive more organic traffic and grow your brand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">Ready to start a project?</h2>
+                    <p class="lead mb-5">Let's work together to build something great. Reach out to me and I'll get back to you as soon as possible.</p>
+                    
+                    <div class="card bg-transparent border-secondary p-4 shadow-lg">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-lg bg-dark text-light border-secondary" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control form-control-lg bg-dark text-light border-secondary" placeholder="Your Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control form-control-lg bg-dark text-light border-secondary" placeholder="Subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control form-control-lg bg-dark text-light border-secondary" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold mt-3 shadow">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center py-4">
+        <div class="container">
+            <p class="mb-0 text-muted">&copy; 2026 MyPortfolio. Crafted with <span class="text-danger">&hearts;</span> using Bootstrap.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
